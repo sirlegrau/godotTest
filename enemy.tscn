@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://w6xgdeepauv6"]
+
+[ext_resource type="Script" path="res://SCRIPTS/enemy.gd" id="1_4ma6g"]
+[ext_resource type="Texture2D" uid="uid://ebm8ujprnnmm" path="res://SPRITES/png-clipart-counter-strike-source-counter-strike-global-offensive-counter-strike-1-6-counter-strike-online-counter-strike-game-video-game-thumbnail.png" id="1_m33ru"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sdwxe"]
+size = Vector2(99, 148)
+
+[node name="Enemy" type="Area2D"]
+script = ExtResource("1_4ma6g")
+health = null
+speed = null
+damage = null
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(5.72205e-06, 1)
+scale = Vector2(0.271552, 0.279013)
+texture = ExtResource("1_m33ru")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 1)
+shape = SubResource("RectangleShape2D_sdwxe")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

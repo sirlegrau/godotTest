@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://dv7gdcnq0hkro"]
+
+[ext_resource type="Script" path="res://SCRIPTS/PlayerMovement.gd" id="1_61jt0"]
+[ext_resource type="PackedScene" uid="uid://dbrlhfoopxttv" path="res://bullet.tscn" id="2_g8vlq"]
+[ext_resource type="Texture2D" uid="uid://csxblu5au4756" path="res://SPRITES/download.jpg" id="3_ox887"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_01mut"]
+radius = 41.0
+height = 162.0
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_61jt0")
+bullet_scene = ExtResource("2_g8vlq")
+fire_rate = null
+speed = null
+jump_force = null
+gravity = null
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(266, 64)
+zoom = Vector2(0.8, 0.8)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_ox887")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_01mut")
