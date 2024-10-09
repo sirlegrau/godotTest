@@ -1,16 +1,20 @@
-[gd_scene load_steps=4 format=3 uid="uid://w6xgdeepauv6"]
+[gd_scene load_steps=6 format=3 uid="uid://w6xgdeepauv6"]
 
 [ext_resource type="Script" path="res://SCRIPTS/enemy.gd" id="1_4ma6g"]
 [ext_resource type="Texture2D" uid="uid://ebm8ujprnnmm" path="res://SPRITES/png-clipart-counter-strike-source-counter-strike-global-offensive-counter-strike-1-6-counter-strike-online-counter-strike-game-video-game-thumbnail.png" id="1_m33ru"]
+[ext_resource type="PackedScene" uid="uid://dbrlhfoopxttv" path="res://SCENES/bullet.tscn" id="2_3slhf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sdwxe"]
 size = Vector2(99, 148)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hg5tx"]
+size = Vector2(1665, 165)
+
 [node name="Enemy" type="Area2D"]
 script = ExtResource("1_4ma6g")
-health = null
-speed = null
-damage = null
+shooting_interval = null
+bullet_speed = null
+bullet_scene = ExtResource("2_3slhf")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(5.72205e-06, 1)
@@ -21,4 +25,19 @@ texture = ExtResource("1_m33ru")
 position = Vector2(0.5, 1)
 shape = SubResource("RectangleShape2D_sdwxe")
 
+[node name="DetectionArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
+position = Vector2(3.5, -23.5)
+shape = SubResource("RectangleShape2D_hg5tx")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="BulletSpawnPoint" type="Marker2D" parent="."]
+position = Vector2(-39, -27)
+
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_entered" from="DetectionArea" to="." method="_on_detection_area_area_entered"]
+[connection signal="area_exited" from="DetectionArea" to="." method="_on_detection_area_area_exited"]
+[connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]
+[connection signal="body_exited" from="DetectionArea" to="." method="_on_detection_area_body_exited"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dv7gdcnq0hkro"]
+[gd_scene load_steps=6 format=3 uid="uid://dv7gdcnq0hkro"]
 
 [ext_resource type="Script" path="res://SCRIPTS/PlayerMovement.gd" id="1_61jt0"]
 [ext_resource type="PackedScene" uid="uid://dbrlhfoopxttv" path="res://SCENES/bullet.tscn" id="2_g8vlq"]
@@ -8,7 +8,11 @@
 radius = 41.0
 height = 162.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3lh7b"]
+size = Vector2(90, 168)
+
 [node name="CharacterBody2D" type="CharacterBody2D"]
+position = Vector2(-1, -1)
 script = ExtResource("1_61jt0")
 bullet_scene = ExtResource("2_g8vlq")
 
@@ -22,3 +26,9 @@ texture = ExtResource("3_ox887")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_01mut")
+
+[node name="areaplayer" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="areaplayer"]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_3lh7b")

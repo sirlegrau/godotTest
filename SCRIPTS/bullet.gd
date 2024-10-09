@@ -7,7 +7,6 @@ var direction: int = 1  # 1 for right, -1 for left
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-    add_to_group("bullets")
     # Schedule the bullet to be removed after its lifetime ends
     await get_tree().create_timer(lifetime).timeout
     queue_free()
@@ -21,4 +20,6 @@ func _process(delta: float) -> void:
 func set_direction(is_right: bool) -> void:
     direction = 1 if is_right else -1  # 1 for right, -1 for left
 
-
+func _on_body_entered(body:Node2D):
+    if (body.is_in_group("tilemap")):
+        queue_free()

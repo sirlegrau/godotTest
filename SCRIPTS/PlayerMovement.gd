@@ -3,18 +3,15 @@ extends CharacterBody2D
 # Variables for movement
 @export var bullet_scene: PackedScene  # Assign this to your Bullet.tscn in the editor
 @export var fire_rate: float = 0.15  # Time delay between shots
-@export var speed: float = 300.0  # Horizontal movement speed
-@export var jump_force: float = 500.0  # Jumping force
-@export var gravity: float = 900.0  # Gravity applied to the player
+@export var speed: float = 400.0  # Horizontal movement speed
+@export var jump_force: float = 700.0  # Jumping force
+@export var gravity: float = 1900.0  # Gravity applied to the player
 
 
 var can_shoot: bool = true
 
 func _ready():
-    var bullet = bullet_scene.instantiate() as Area2D
-    bullet.position = position
-    get_parent().add_child(bullet)
-    print('bullet ready')
+    pass
 # Function to handle movement
 func _physics_process(delta):
     # Apply gravity to the vertical velocity
@@ -33,11 +30,10 @@ func _physics_process(delta):
     velocity.x = direction * speed
     
     # Handle jumping
-    if Input.is_action_just_pressed("ui_up") and is_on_floor():
+    if Input.is_action_pressed("ui_up") and is_on_floor():
         velocity.y = -jump_force
 
     if Input.is_action_pressed("shoot") and can_shoot:
-        print("shooting 2")
         shoot_bullet()
     
     # Move the player character
@@ -52,7 +48,7 @@ func shoot_bullet() -> void:
 
     var bullet = bullet_scene.instantiate() as Area2D
     bullet.position = position  # Set the bullet's position to the player's position
-    
+    bullet.add_to_group(("bullets"))
     # Set bullet direction based on the current player's facing direction
     bullet.set_direction(Global.player_direction)  
 
