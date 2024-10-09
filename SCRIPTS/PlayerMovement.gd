@@ -3,8 +3,8 @@ extends CharacterBody2D
 # Variables for movement
 @export var bullet_scene: PackedScene  # Assign this to your Bullet.tscn in the editor
 @export var fire_rate: float = 0.15  # Time delay between shots
-@export var speed: float = 400.0  # Horizontal movement speed
-@export var jump_force: float = 700.0  # Jumping force
+@export var speed: float = 300.0  # Horizontal movement speed
+@export var jump_force: float = 500.0  # Jumping force
 @export var gravity: float = 1900.0  # Gravity applied to the player
 
 

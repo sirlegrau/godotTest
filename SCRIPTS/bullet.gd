@@ -21,5 +21,14 @@ func set_direction(is_right: bool) -> void:
     direction = 1 if is_right else -1  # 1 for right, -1 for left
 
 func _on_body_entered(body:Node2D):
-    if (body.is_in_group("tilemap")):
-        queue_free()
+    if body.is_in_group("tilemap"):  # Check if it collides with the TileMap
+        var tilemap = body as TileMap  # Cast to TileMap
+        
+        # Convert the bullet's position to tilemap coordinates using local_to_map()
+        var cell_position = tilemap.local_to_map(tilemap.to_local(global_position))
+
+        # Check if the cell position is within the bounds of the TileMap
+        if tilemap.get_cell_source_id(0,cell_position) != -1:  # Ensure the tile exists
+            tilemap.set_cell(0,cell_position, -1)  # Remove the tile by setting its value to -1
+
+        queue_free()  # Destroy the bullet upon collision

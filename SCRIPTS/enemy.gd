@@ -58,10 +58,3 @@ func _on_area_entered(area:Area2D):
 # Function to handle the enemy's death
 func die() -> void:
     queue_free()  # Remove the enemy from the scene
-
-
-
-
-
-
-

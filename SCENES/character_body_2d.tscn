@@ -18,10 +18,10 @@ bullet_scene = ExtResource("2_g8vlq")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2(266, 64)
-zoom = Vector2(0.8, 0.8)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.5, 0.5)
+position = Vector2(0, 0.125)
+scale = Vector2(0.5, 0.499211)
 texture = ExtResource("3_ox887")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
