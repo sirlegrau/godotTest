@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://c37e57vuvh2ov"]
 
-[ext_resource type="PackedScene" uid="uid://dv7gdcnq0hkro" path="res://character_body_2d.tscn" id="1_drkon"]
+[ext_resource type="PackedScene" uid="uid://dv7gdcnq0hkro" path="res://SCENES/character_body_2d.tscn" id="1_drkon"]
 [ext_resource type="TileSet" uid="uid://dkhb6vhcwa78o" path="res://ladrillo.tres" id="2_csrep"]
-[ext_resource type="PackedScene" uid="uid://w6xgdeepauv6" path="res://enemy.tscn" id="3_peh1t"]
+[ext_resource type="PackedScene" uid="uid://w6xgdeepauv6" path="res://SCENES/enemy.tscn" id="3_peh1t"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -15,10 +15,6 @@ layer_0/tile_data = PackedInt32Array(2293771, 524288, 0, 2359307, 131072, 1, 242
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_drkon")]
 position = Vector2(13, -231)
-fire_rate = 0.15
-speed = 300.0
-jump_force = 500.0
-gravity = 900.0
 
 [node name="Enemy" parent="." instance=ExtResource("3_peh1t")]
 position = Vector2(2396, -58)

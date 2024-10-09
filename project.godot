@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="a ver si se conservan las variables de entorno xd"
-run/main_scene="res://mainscene.tscn"
+run/main_scene="res://SCENES/mainscene.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 

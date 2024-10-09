@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dv7gdcnq0hkro"]
 
 [ext_resource type="Script" path="res://SCRIPTS/PlayerMovement.gd" id="1_61jt0"]
-[ext_resource type="PackedScene" uid="uid://dbrlhfoopxttv" path="res://bullet.tscn" id="2_g8vlq"]
+[ext_resource type="PackedScene" uid="uid://dbrlhfoopxttv" path="res://SCENES/bullet.tscn" id="2_g8vlq"]
 [ext_resource type="Texture2D" uid="uid://csxblu5au4756" path="res://SPRITES/download.jpg" id="3_ox887"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_01mut"]
