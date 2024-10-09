@@ -15,15 +15,13 @@ layer_0/tile_data = PackedInt32Array(2293771, 524288, 0, 2359307, 131072, 1, 242
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_drkon")]
 position = Vector2(13, -231)
+fire_rate = 0.15
+speed = 300.0
+jump_force = 500.0
+gravity = 900.0
 
 [node name="Enemy" parent="." instance=ExtResource("3_peh1t")]
 position = Vector2(2396, -58)
-health = null
-speed = null
-damage = null
 
 [node name="Enemy2" parent="." instance=ExtResource("3_peh1t")]
 position = Vector2(1568, 167)
-health = null
-speed = null
-damage = null

@@ -20,3 +20,5 @@ func _process(delta: float) -> void:
 # Function to set the bullet's direction
 func set_direction(is_right: bool) -> void:
     direction = 1 if is_right else -1  # 1 for right, -1 for left
+
+

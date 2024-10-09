@@ -11,10 +11,6 @@ height = 162.0
 [node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource("1_61jt0")
 bullet_scene = ExtResource("2_g8vlq")
-fire_rate = null
-speed = null
-jump_force = null
-gravity = null
 
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2(266, 64)

@@ -54,8 +54,7 @@ func shoot_bullet() -> void:
     bullet.position = position  # Set the bullet's position to the player's position
     
     # Set bullet direction based on the current player's facing direction
-    
-    bullet.set_direction(Global.player_direction)  # Pass the boolean to set the direction
+    bullet.set_direction(Global.player_direction)  
 
     get_parent().add_child(bullet)  # Add the bullet to the scene
     can_shoot = false  # Prevent shooting until cooldown is over
